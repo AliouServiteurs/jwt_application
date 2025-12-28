@@ -100,11 +100,19 @@ Une application de gestion des Endpoints avec un token avec **Spring Boot**, sé
 
 1. Configurer la base de données dans `application.properties` :
 
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/bibliotheque
-spring.datasource.username=root
-spring.datasource.password=root
+```propertiesspring.application.name=jwt_application
+spring.datasource.url=jdbc:mariadb://localhost:3306/test_aliou?createDatabaseIfNotExist=true
+spring.datasource.username=aliou
+spring.datasource.password=aliou_pass
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+
 spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.database-platform=org.hibernate.dialect.MariaDBDialect
+
+# JWT Configuration
+jwt.secret=MySecretKeyJwtAliou1234567893F9aPp9Xz7QeWm8R6LkT4Y2N1C8B0sEJ
+jwt.expiration=86400000
 ```
 
 2. Lancer l’application :
